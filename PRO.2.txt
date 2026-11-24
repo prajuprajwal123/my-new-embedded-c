@@ -1,0 +1,48 @@
+#include "main.h"
+int main(void)
+{
+system clock_config();
+mx_GPIO_init();
+while (1);
+{
+GPIOB->ODR &=~((1<<0)|(1<<1)|(1<<2));
+GPIOB->ODR|=(1<<2);
+GPIOB->ODR|=(1<<0);
+GPIOB->ODR&=~(1<<1);
+HAL_DELAY(3000);
+
+GPIOB->ODR& =~ ((1<<0)|(1<<1));
+HAL_DELAY(2000);
+
+GPIOB->ODR|= (1<<1);
+GPIOB->ODR&=~(1<<0);
+HAL_DELAY(3000);
+
+GPIOB->ODR& =~ ((1<<1)|(1<<0));
+HAL_DELAY(2000);
+}
+}
+#include "main.h"
+int main(void)
+{
+system clock_config();
+mx_GPIO_init();
+while (1);
+{
+GPIOB->ODR &=~((1<<0)|(1<<1)|(1<<2));
+GPIOB->ODR|=(1<<2);
+GPIOB->ODR|=(1<<0);
+GPIOB->ODR&=~(1<<1);
+HAL_DELAY(3000);
+
+GPIOB->ODR& =~ ((1<<0)|(1<<1));
+HAL_DELAY(2000);
+
+GPIOB->ODR|= (1<<1);
+GPIOB->ODR&=~(1<<0);
+HAL_DELAY(3000);
+
+GPIOB->ODR& =~ ((1<<1)|(1<<0));
+HAL_DELAY(2000);
+}
+}

@@ -1,0 +1,13 @@
+#include "main.h"
+int main(void)
+{ 
+system clock_config();
+mx_GPIO_init();
+while (1);
+{
+GPIOA->ODR|=(1<<5);
+HAL_DELAY(1000);
+GPIOA->ODR& =~(1<<5);
+HAL_DELAY(2000);
+}
+}
